@@ -1,0 +1,173 @@
+.body{
+    background: white;
+   
+    height: 100vh;
+    width: 100%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+.mainDiv{
+   display: flex;
+   flex-direction: row;
+}
+
+.leftDiv{
+    height: 100vh;
+    width:13vw;
+    background:rgb(34, 222, 228);
+    border :1px solid rgb(34, 222, 228);
+    border-radius: 5px;
+    
+
+}
+
+.logo{
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.logoImg {
+    width: 5vw;
+}
+.logo h2{
+    font-size: 2vw;
+    color: white;
+    margin-top: 8%;
+    margin-left: 1%;
+    margin-right: 2%;;
+}
+.patty{
+    height: 5px;
+    width: 50px;
+    background: rgb(34,228,172);
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.mobileLeftDiv{
+    background: rgb(34,228,172);
+    height: 80vh;
+    width:40vw;
+    position: fixed;
+    right: 200vw;
+    
+}
+
+.row a{
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.7vw;
+    font-style: oblique;
+}
+
+.row a:hover{
+    color:  #08B3E5;
+}
+
+.hamburger{
+    display: none;
+}
+
+
+
+@media screen and (max-width:900px) {
+    .leftDiv{
+        display: none;
+    }
+     .logo{
+        flex-direction: column;
+        align-content: center;
+     }
+    .logoImg{
+        width: 20vw;
+    }
+    .logo h2{
+        font-size: 8vw;
+        color: white;
+        margin-top: 8%;
+        margin-left: 1%;
+        margin-right: 2%;;
+    }
+    .hamburger{
+        display: inline-block;
+    }
+}
+
+
+.rightDiv{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.totalProducts{
+    padding: 10px;
+    height: 20vh;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    color: white;
+    border: 1px solid linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);;
+    border-radius: 12px;
+}
+.totalSales{
+    padding: 10px;
+    height: 20vh;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    color: white;
+    border: 1px solid linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);;
+    border-radius: 12px;
+}
+.totalRating{
+    padding: 10px;
+    height: 20vh;
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    
+
+    color: white;
+    border: 1px solid linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);;
+    border-radius: 12px;
+}
+
+.cname{
+    margin:3%;
+    color: #08B3E5
+}
+
+.ch5{
+    display: inline-block;
+    font-size: 1.7vw;
+}
+
+.ch5:hover{
+    cursor: pointer;
+    color: #08B3E5
+    
+}
+
+@media screen and (max-width:900px) {
+    .mainDiv{
+        flex-direction: column;
+    }
+   
+    .cname{
+        text-align: center;
+    }
+}
+
+.table thead tr {
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    
+    color: white;
+}
+
+.table tbody tr {
+    background-color:  rgb(34, 222, 228);
+    background-image: linear-gradient(19deg, rgb(34, 222, 228)35%, #c659f9 100%);
+    color: white;
+}
