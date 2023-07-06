@@ -198,13 +198,14 @@ export default  function profile(){
       <div className="modal-body">
       <form onSubmit={updateProfile} className='form-control'>
                   <label className='form-label'>Company Name</label>
-                  <input className='form-control'  type='text' required  placeholder='Enter Company Name' onChange={(e) => {setCompanyName2(e.target.value)}}></input>
+                  <input className='form-control' value={companyName}  type='text' required  placeholder='Enter Company Name' onChange={(e) => {setCompanyName2(e.target.value)}}></input>
                   <label className='form-label mt-4'>Company Email</label>
-                  <input className='form-control'  type='email' required placeholder='Enter Company Email' onChange={(e) => {setCompanyEmail2(e.target.value)}}></input>
+                  <input className='form-control'  type='email' required value={companyEmail} placeholder='Enter Company Email' onChange={(e) => {setCompanyEmail2(e.target.value)}}
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></input>
                   <label className='form-label mt-4'>Company Number</label>
-                  <input className='form-control'  type="number" required placeholder='Enter Company Number' onChange={(e) => {setCompanyNumber2(e.target.value)}}></input>
+                  <input className='form-control'  type="number" required value={companyNumber} placeholder='Enter Company Number' onChange={(e) => {setCompanyNumber2(e.target.value)}}></input>
                   <label className='form-label mt-4'>Company Registration</label>
-                  <input className='form-control'  type="text" required placeholder='Enter Company Registration no' onChange={(e) => {setCompanyRegistration2(e.target.value)}}></input>
+                  <input className='form-control'  type="text" required value={companyRegistration} placeholder='Enter Company Registration no' onChange={(e) => {setCompanyRegistration2(e.target.value)}}></input>
                 </form>
       </div>
       <div className="modal-footer">  

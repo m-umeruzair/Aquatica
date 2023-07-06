@@ -18,11 +18,21 @@ export default function Signup() {
     const [companyNumber, setCompanyNumber]= useState(null)
     const [companyPassword, setCompanyPassword]= useState(null)   
     const [companyTotalSales, setCompanyTotalSales]= useState(0)
-
+    
+    function isValidEmail(email) {
+      // Regular expression pattern for email validation
+      const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+      
+      // Test the email against the pattern
+      return emailPattern.test(email);
+    }
 
     const x= useRouter()
     function postData(e){
-
+       if(isValidEmail(companyEmail)==false){
+        window.alert("Invalid Email")
+       }
+       else{
         e.preventDefault()
         axios({
             method:"POST",
@@ -39,7 +49,8 @@ export default function Signup() {
 
             }})
             window.alert("Sign Up Successfull")
-            x.push({pathname:'/main'})
+            x.push({pathname:'/log-in'})
+          }
     }
     return(
     <div className={styles.body} >    
@@ -52,8 +63,9 @@ export default function Signup() {
       <div className='row'  style={{ borderRadius:"10px" }}>
         <div  className=' col-md-6' style={{height:'500px',backgroundColor:"white", marginTop : "9%" , paddingLeft:'-2%',textAlign:"center" ,borderRadius:"10px 0px 0px 10px", }}>
          <div className={styles.mt}>
+          <div className={styles.logo}>
           <Image    src={logo} alt="logo" ></Image>
-      
+         </div>
           </div>
         
           
@@ -66,22 +78,30 @@ export default function Signup() {
            
                 <div className='col-md-6'>
                 <label className={styles.label}> Company Name</label>
-                <input className='form-control mt-2' required id='companyName' placeholder='Enter Full Company Name' onChange={(e) => {setCompanyName(e.target.value)}}></input>
+                <input className='form-control mt-2' required id='companyName' placeholder='Enter Full Company Name'
+                minLength={4} onChange={(e) => {setCompanyName(e.target.value)}}></input>
                 </div>
                 <div className='col-md-6'>
                 <label className={styles.label1}> Company email</label>
-                <input className='form-control mt-2' id='companyEmail' required type='mail' placeholder='Enter Company Email' onChange={(e) => {setCompanyEmail(e.target.value)}}></input>
+                <input className='form-control mt-2' id='companyEmail' required type='mail' placeholder='Enter Company Email'
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" onChange={(e) => {setCompanyEmail(e.target.value)}}></input>
                 </div>
             </div>
 
             <div className='row'>
                 <div className='col-md-6'>
                 <label className={styles.label}> Company Number</label>
-                <input className='form-control mt-2' type='phone' required id='companyNumber' placeholder='Enter Contact Number' onChange={(e) => {setCompanyNumber(e.target.value)}}></input>
+                <input className='form-control mt-2' type='tel' pattern="\d*"   onInvalid={() => {
+                  const input = document.getElementById('companyNumber');
+                  input.setCustomValidity('Enter numbers only');}} onInput={() => {
+                    const input = document.getElementById('companyNumber');
+                    input.setCustomValidity('');
+                  }}
+                 minLength={10} required id='companyNumber' placeholder='Enter Contact Number' onChange={(e) => {setCompanyNumber(e.target.value)}}></input>
                 </div>
                 <div className='col-md-6'>
                 <label className={styles.label1}> Company Address </label>
-                <input className='form-control mt-2' required type='text' id='companyAddress' placeholder='Enter Company Address' onChange={(e) => {setCompanyAddress(e.target.value)}}></input>
+                <input className='form-control mt-2' required type='text' minLength={5} id='companyAddress' placeholder='Enter Company Address' onChange={(e) => {setCompanyAddress(e.target.value)}}></input>
                 </div>
             </div>
 
@@ -92,7 +112,7 @@ export default function Signup() {
                 </div>
                 <div className='col-md-6'>
                 <label className={styles.label1}> Password </label>
-                <input className='form-control mt-2' required type='password'  id='companyPassword' placeholder='Enter Password' onChange={(e) => {setCompanyPassword(e.target.value)}}></input>
+                <input className='form-control mt-2' required type='password' minLength={5}  id='companyPassword' placeholder='Enter Password' onChange={(e) => {setCompanyPassword(e.target.value)}}></input>
                 </div>
             </div>
             <a href='/log-in'><label className={styles.label2} style={{marginLeft:'5px'}}>Already have an account? Sign in Now</label></a>

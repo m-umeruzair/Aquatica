@@ -8,7 +8,13 @@
 }
 
 
-
+.logo{
+    width: 300px;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+ }
+ 
 
 .input{
     align-items: center;

@@ -68,7 +68,8 @@ export default function LogIn() {
       <div className='row'  style={{ borderRadius:"10px 0px 0px 10px" }}>
         <div className='col-md-6' style={{backgroundColor:"white", marginTop : "120px" , paddingLeft:'-200px',textAlign:"center"  }}>
          <div className={styles.mt}>
-          <Image    src={logo} alt="logo" ></Image>
+          <div className={styles.logo}>
+          <Image    src={logo} alt="logo" ></Image></div>
           </div>       
           
         </div>

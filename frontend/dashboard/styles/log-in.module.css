@@ -7,6 +7,12 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.logo{
+   width: 300px;
+   align-items: center;
+   align-content: center;
+   margin: auto;
+}
 
 
 

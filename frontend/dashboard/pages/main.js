@@ -101,18 +101,18 @@ export default function Main(){
   <div className='containter-fluid mx-auto' style={{width:'80vw'}}>
     <div className='row mx-auto'> 
     <h1 className={styles.cname}>{data.companyName}</h1>
-    <div className={`col-lg-4 mx-auto ${styles.totalProducts}`}>
-         <h3>Total Products:</h3>
-         <h3>{totalProducts}</h3>
+    <div className={`col-lg-5 mx-auto ${styles.totalProducts}`}>
+         <h3>Total Products: {totalProducts}</h3>
+         
     </div>
-    <div className={`col-lg-3 mx-auto ${styles.totalSales}`}>
-         <h3>Total Sales:</h3>
-         <h3>{data.companySales} RS</h3>
+    <div className={`col-lg-5 mx-auto ${styles.totalSales}`}>
+         <h3>Total Sales: {data.companySales} RS</h3>
+         
     </div>  
-    <div className={`col-lg-4 mx-auto ${styles.totalRating}`}>
+    {/* <div className={`col-lg-4 mx-auto ${styles.totalRating}`}>
          <h3>Rating:</h3>
          <h3>5</h3>
-    </div>  
+    </div>   */}
   </div>
   <div className='row mx-auto mt-5'>
      <table className={`table ${styles.table}`} >
